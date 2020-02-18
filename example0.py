@@ -21,6 +21,11 @@ def move(my_history, their_history, my_score, their_score):
     Returns 'c' or 'b' for collude or betray.
     '''
     
-    # This player always colludes.
-    return 'c'
+    # This player does the opposite of the previous action by the opponent
+    if len(my_history)==0:
+      return 'c'
+    elif their_history[-1]=='c':
+      return 'b'
+    else:
+      return 'c'
     

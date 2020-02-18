@@ -20,9 +20,13 @@ def move(my_history, their_history, my_score, their_score):
     
     Returns 'c' or 'b' for collude or betray.
     '''
-    # This player colludes on even numbered rounds (first round is round #0).
-    if len(my_history)%2 == 0:
-        return 'c'
+    #This player copies the previous 2 action of the opponent
+    if len(my_history)==0 or len(my_history)==1:
+      return 'c'
+    elif their_history[-2]=='c':
+      return 'c'
+    elif their_history[-2]='b':
+      return 'b'
     else:
-        return 'b'
+      return 'c'
     
