@@ -24,9 +24,9 @@ def move(my_history, their_history, my_score, their_score):
     #This player uses the previous 2 actions of the opponent and decides to betray when both are colluding and vice versa.      
     if len(my_history)==0 or len(my_history)==1:
       return 'c'
-    elif their_history[-2]=='cc':
+    elif their_history[-2]=='c':
       return 'b'
-    elif their_history[-2]='bb':
+    elif their_history[-2]=='b':
       return 'c'
     else:
       return 'b'
